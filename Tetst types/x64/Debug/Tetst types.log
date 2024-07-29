@@ -1,2 +1,4 @@
-﻿  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+﻿  MyForm.cpp
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(66,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Tetst types.vcxproj -> D:\С++\Проекты_С++\Tetst types\x64\Debug\Tetst types.exe

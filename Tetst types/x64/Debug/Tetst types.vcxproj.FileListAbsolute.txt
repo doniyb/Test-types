@@ -1,3 +1,4 @@
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetst types.vcxproj.AssemblyReference.cache
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.MyForm.resources
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetst types.vcxproj.GenerateResource.cache
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.Ресурсы.resources

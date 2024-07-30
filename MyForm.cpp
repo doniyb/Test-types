@@ -13,10 +13,28 @@ int main(array<String^>^ args_main)
 {
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
+	Tetsttypes::Login login;
+	Application::Run(% login);
 	Tetsttypes::MyForm form;
 	Application::Run(% form);
 	return 0;
 }
+
+Tetsttypes::Login::Login(void)
+{
+	InitializeComponent();
+}
+
+System::Void Tetsttypes::Login::buttEnter_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if(textBox_log->Text == "doniyb" && textBox_pasword->Text == "cde3322wsxzaq11")
+		this->Close();
+}
+
+
+//---------------
+//Основное окно:
+//---------------
 
 Tetsttypes::MyForm::MyForm(void)
 {
@@ -36,18 +54,19 @@ std::vector <std::string> words{ "привет", "дом", "рука", "вид", "вопрос", "врем
 , "разный" , "российский" , "собственный" , "старый" , "черный" , "где" , "свой" ,
 "я" , "ты" , "этот" , "такой" , "свой", "она", "они"
 , "себя" , "бежать" , "продовать" , "водить" , "петь", "пить", "есть" };
-int num_word = 0;
-int typech = 0;
+int num_word = 0; //индекс слоава в векторе слов
+int typech = -1; //количество набаранных слов
+//равно -1 т. к. в самом начале поле ввода и вывода пусты => равны
 
-System::Void Tetsttypes::MyForm::textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e)
+
+System::Void Tetsttypes::MyForm::textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 }
 
-
-System::Void Tetsttypes::MyForm::textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e)
+System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 
-
+	label_timer->Text = gcnew String(std::to_string(timer->Interval).c_str());
 
 	msclr::interop::marshal_context context;
 	std::string str1 = context.marshal_as<std::string>(textInput->Text);
@@ -68,11 +87,10 @@ System::Void Tetsttypes::MyForm::textBox1_TextChanged(System::Object^ sender, Sy
 		textOutput->Text = gcnew String(words[num_word].c_str());
 		textInput->Text = "";
 	}
-	typed->Text = "Набранные: " + gcnew String(std::to_string(typech).c_str());
+	Typed->Text = "Набранные: " + gcnew String(std::to_string(typech).c_str());
 }
 
-
-System::Void Tetsttypes::MyForm::label1_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void Tetsttypes::MyForm::labelTyped(System::Object^ sender, System::EventArgs^ e)
 {
 }
 

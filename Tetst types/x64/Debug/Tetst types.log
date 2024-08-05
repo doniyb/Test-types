@@ -1,4 +1,38 @@
-﻿  MyForm.cpp
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(85,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  Tetst types.vcxproj -> D:\С++\Проекты_С++\Tetst types\x64\Debug\Tetst types.exe
+﻿  Data_base.cpp
+  MyForm.cpp
+D:\С++\Проекты_С++\Tetst types\Data_base.h(52,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ж"
+D:\С++\Проекты_С++\Tetst types\Data_base.h(52,19): error C2065: ж: необъявленный идентификатор
+D:\С++\Проекты_С++\Tetst types\Data_base.h(53,2): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+D:\С++\Проекты_С++\Tetst types\Data_base.h(52,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ж"
+D:\С++\Проекты_С++\Tetst types\Data_base.h(52,19): error C2065: ж: необъявленный идентификатор
+D:\С++\Проекты_С++\Tetst types\Data_base.h(53,2): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(12971,59): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(12986,5): error C2371: IDataObject: переопределение; различные базовые типы
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13173,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13186,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13199,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13247,36): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13267,32): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13385,40): error C3699: *: это косвенное обращение невозможно использовать для типа "IMessageFilter"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(13435,5): error C2371: IMessageFilter: переопределение; различные базовые типы
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16015,19): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16023,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16028,19): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16036,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16041,19): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h(16050,29): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h(440,59): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h(1289,59): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h(1295,60): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h(3665,59): error C3699: *: это косвенное обращение невозможно использовать для типа "IDropTarget"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h(3705,5): error C2371: IDropTarget: переопределение; различные базовые типы
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h(99,64): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h(106,9): error C2371: IServiceProvider: переопределение; различные базовые типы
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h(123,43): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h(251,24): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h(261,34): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\urlmon.h(7156,67): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\urlmon.h(7158,63): error C3699: *: это косвенное обращение невозможно использовать для типа "IServiceProvider"
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ole2.h(213,90): error C3699: *: это косвенное обращение невозможно использовать для типа "IDataObject"
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(120,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...

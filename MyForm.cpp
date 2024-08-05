@@ -1,8 +1,11 @@
 #include "MyForm.h"
+#include "Login.h"
+#include "Data_base.cpp"
 #include <string>
 #include <vector>
 #include <ctime>
 #include <msclr\marshal_cppstd.h>
+#include <SQLAPI.h>
 
 
 using namespace System;
@@ -20,6 +23,7 @@ int main(array<String^>^ args_main)
 	return 0;
 }
 
+
 Tetsttypes::Login::Login(void)
 {
 	InitializeComponent();
@@ -35,21 +39,17 @@ System::Void Tetsttypes::Login::buttEnter_Click(System::Object^ sender, System::
 //---------------
 //Основное окно:
 //---------------
-
-Tetsttypes::MyForm::MyForm(void)
-{
-	InitializeComponent();
-}
-
-std::vector <std::string> words{ "привет", "дом", "рука", "вид", "вопрос", "время", "он", "как", 
-"его", "год", "голова", "дело", "день", "друг", "жизнь", "конец", "лицо", "место", 
-"мир", "работа", "раз", "ребенок", "сила", "слово", "случай", "сторона", "страна", "человек", 
+int second = 0;
+const int max_seconds = 180;
+std::vector <std::string> words{ "привет", "дом", "рука", "вид", "вопрос", "время", "он", "как",
+"его", "год", "голова", "дело", "день", "друг", "жизнь", "конец", "лицо", "место",
+"мир", "работа", "раз", "ребенок", "сила", "слово", "случай", "сторона", "страна", "человек",
 "быть", "взять", "видеть", "говорить", "дать", "думать", "жить", "знать", "идти" , "иметь" ,
-"мочь" , "оказаться" 
-, "получить" , "понять" , "работать" , "сделать" , "сидеть" , "сказать" , "смотреть" , "спросить" 
-, "стать" , "хотеть" , "больше" , "вдруг", "вмесете", "вообще", "еще", "меньше", "особенно", "очень", 
+"мочь" , "оказаться"
+, "получить" , "понять" , "работать" , "сделать" , "сидеть" , "сказать" , "смотреть" , "спросить"
+, "стать" , "хотеть" , "больше" , "вдруг", "вмесете", "вообще", "еще", "меньше", "особенно", "очень",
 "почти", "снова", "совсем", "сразу", "уже", "хорошо", "белый"
-, "большой" , "высокий" , "главный" , "государственный" , "далекий" , "маленький" , "молодой" 
+, "большой" , "высокий" , "главный" , "государственный" , "далекий" , "маленький" , "молодой"
 , "настоящий" , "новый" , "нужный" , "общий" , "основной", "полный", "последний"
 , "разный" , "российский" , "собственный" , "старый" , "черный" , "где" , "свой" ,
 "я" , "ты" , "этот" , "такой" , "свой", "она", "они"
@@ -58,41 +58,88 @@ int num_word = 0; //индекс слоава в векторе слов
 int typech = -1; //количество набаранных слов
 //равно -1 т. к. в самом начале поле ввода и вывода пусты => равны
 
+Tetsttypes::MyForm::MyForm(void)
+{
+	InitializeComponent();
+
+	second = 0;
+	timer->Interval = 1000;
+	timer->Enabled = true;
+}
+
+std::string outtime(const int& seconds) {
+	int min = second / 60;
+	int sec = second % 60;
+
+	std::string res = "Таймер: ";
+	if (min == 0) {
+		if (sec > 9) {
+			res += ("00 : " + std::to_string(sec));
+		}
+		else {
+			res += ("00 : 0" + std::to_string(sec));
+		}
+	}
+
+	else {
+		if (sec > 9)
+			res += ("0" + std::to_string(min) + " : " + std::to_string(sec));
+		else
+			res += ("0" + std::to_string(min) + " : 0" + std::to_string(sec));
+	}
+	return res;
+}
+bool endtime(int& seconds, const int maxsec) {
+	if (seconds == maxsec) {
+		MessageBox::Show("Вы набрали " + typech.ToString() + " слова");
+		second = 0;
+		typech = -1;
+	}
+	return seconds == maxsec;
+}
+System::Void Tetsttypes::MyForm::timer_Tick(System::Object^ sender, System::EventArgs^ e)
+{
+	++second;
+	
+	label_timer->Text = gcnew String(outtime(second).c_str());
+
+	
+	endtime(second, max_seconds) ? Typed->Text = "Набранные: 0" : 1;
+}
 
 System::Void Tetsttypes::MyForm::textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 }
 
+void proverkaOut(std::string& strinp, const std::string& strout) {
+	
+}
+bool similar(const std::string& strinp, const std::string& strout) {
+	if (strinp == strout) {
+		typech++;
+		srand(time(0));
+		num_word = rand() % words.size();	
+	}
+	return strinp == strout;
+}
 System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 
-	label_timer->Text = gcnew String(std::to_string(timer->Interval).c_str());
-
 	msclr::interop::marshal_context context;
-	std::string str1 = context.marshal_as<std::string>(textInput->Text);
-	std::string str3 = context.marshal_as<std::string>(textOutput->Text);
+	std::string strinp = context.marshal_as<std::string>(textInput->Text);
+	std::string strout = context.marshal_as<std::string>(textOutput->Text);
 
+	proverkaOut(strinp, strout);
+	textInput->Text = gcnew String(strinp.c_str());
 
-	for (int i = 0; i < str1.size(); ++i) {
-		if (str1[i] != str3[i]) {
-			str1.erase(str1.begin() + i);
-			textInput->Text = gcnew String(str1.c_str());
-		}
-	}
-
-	if (textInput->Text == textOutput->Text) {
-		typech++;
-		srand(time(0));
-		num_word = rand() % words.size();
+	if (similar(strinp, strout)) {
 		textOutput->Text = gcnew String(words[num_word].c_str());
 		textInput->Text = "";
 	}
+	
 	Typed->Text = "Набранные: " + gcnew String(std::to_string(typech).c_str());
 }
 
-System::Void Tetsttypes::MyForm::labelTyped(System::Object^ sender, System::EventArgs^ e)
-{
-}
 
 
 

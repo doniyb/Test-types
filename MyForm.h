@@ -1,4 +1,5 @@
 #pragma once
+#include "User.h"
 
 namespace Tetsttypes {
 
@@ -37,6 +38,15 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Label^ profLog;
+	private: System::Windows::Forms::Button^ buttStart200;
+
+	private: System::Windows::Forms::Label^ prof_speed200;
+	private: System::Windows::Forms::Label^ prof_200;
+
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ prof_right200;
+
+
 
 
 
@@ -69,6 +79,11 @@ namespace Tetsttypes {
 			this->label_timer = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->prof_right200 = (gcnew System::Windows::Forms::Label());
+			this->buttStart200 = (gcnew System::Windows::Forms::Button());
+			this->prof_speed200 = (gcnew System::Windows::Forms::Label());
+			this->prof_200 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->profLog = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
@@ -111,7 +126,7 @@ namespace Tetsttypes {
 			// 
 			// timer
 			// 
-			this->timer->Interval = 6000;
+			this->timer->Interval = 1000;
 			this->timer->Tick += gcnew System::EventHandler(this, &MyForm::timer_Tick);
 			// 
 			// label_timer
@@ -138,7 +153,12 @@ namespace Tetsttypes {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->prof_right200);
+			this->tabPage1->Controls->Add(this->prof_speed200);
+			this->tabPage1->Controls->Add(this->prof_200);
+			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Controls->Add(this->profLog);
+			this->tabPage1->Controls->Add(this->buttStart200);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -147,6 +167,61 @@ namespace Tetsttypes {
 			this->tabPage1->Text = L"Профиль";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// prof_right200
+			// 
+			this->prof_right200->AutoSize = true;
+			this->prof_right200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_right200->Location = System::Drawing::Point(46, 173);
+			this->prof_right200->Name = L"prof_right200";
+			this->prof_right200->Size = System::Drawing::Size(89, 16);
+			this->prof_right200->TabIndex = 5;
+			this->prof_right200->Text = L"точность 0%";
+			this->prof_right200->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+			// 
+			// buttStart200
+			// 
+			this->buttStart200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttStart200->Location = System::Drawing::Point(176, 150);
+			this->buttStart200->Name = L"buttStart200";
+			this->buttStart200->Size = System::Drawing::Size(83, 39);
+			this->buttStart200->TabIndex = 4;
+			this->buttStart200->Text = L"Начать";
+			this->buttStart200->UseVisualStyleBackColor = true;
+			this->buttStart200->Click += gcnew System::EventHandler(this, &MyForm::buttStart200_Click);
+			// 
+			// prof_speed200
+			// 
+			this->prof_speed200->AutoSize = true;
+			this->prof_speed200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_speed200->Location = System::Drawing::Point(46, 157);
+			this->prof_speed200->Name = L"prof_speed200";
+			this->prof_speed200->Size = System::Drawing::Size(124, 16);
+			this->prof_speed200->TabIndex = 3;
+			this->prof_speed200->Text = L"скорость 0 зн/мин";
+			this->prof_speed200->Click += gcnew System::EventHandler(this, &MyForm::prof_speed200_Click);
+			// 
+			// prof_200
+			// 
+			this->prof_200->AutoSize = true;
+			this->prof_200->Location = System::Drawing::Point(46, 134);
+			this->prof_200->Name = L"prof_200";
+			this->prof_200->Size = System::Drawing::Size(72, 13);
+			this->prof_200->TabIndex = 2;
+			this->prof_200->Text = L"топ 200 слов";
+			this->prof_200->Click += gcnew System::EventHandler(this, &MyForm::prof_200_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(46, 35);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(101, 13);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"имя пользователя";
+			// 
 			// profLog
 			// 
 			this->profLog->AutoSize = true;
@@ -154,9 +229,9 @@ namespace Tetsttypes {
 				static_cast<System::Byte>(204)));
 			this->profLog->Location = System::Drawing::Point(43, 48);
 			this->profLog->Name = L"profLog";
-			this->profLog->Size = System::Drawing::Size(86, 31);
+			this->profLog->Size = System::Drawing::Size(146, 31);
 			this->profLog->TabIndex = 0;
-			this->profLog->Text = L"label1";
+			this->profLog->Text = L"Name user";
 			// 
 			// tabPage2
 			// 
@@ -190,16 +265,29 @@ namespace Tetsttypes {
 
 		}
 
+	public: 
+		void timerOn();
+		void timerOff();
+		void test(Mode& par);
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e){}
 	private: System::Void textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void labelTyped(System::Object^ sender, System::EventArgs^ e){}
 
 	private: System::Void label_timer_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e);
-};
+
+	private: System::Void buttStart200_Click(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void prof_speed200_Click(System::Object^ sender, System::EventArgs^ e){
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void prof_200_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 
 }
 

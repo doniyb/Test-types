@@ -19,6 +19,10 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class Tetsttypes.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    timerOn(): PrivateScope, Public, HideBySig
+    timerOff(): PrivateScope, Public, HideBySig
+    test(Mode* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
 Class Tetsttypes.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -1,5 +1,6 @@
 #pragma once
 
+
 namespace Tetsttypes {
 
 	using namespace System;

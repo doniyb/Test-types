@@ -268,7 +268,7 @@ namespace Tetsttypes {
 	public: 
 		void timerOn();
 		void timerOff();
-		void test(Mode& par);
+		void test();
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e){}

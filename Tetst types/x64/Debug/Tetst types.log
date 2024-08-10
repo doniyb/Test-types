@@ -1,8 +1,18 @@
-﻿  MyForm.cpp
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(138,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(163,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(165,26): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(168,26): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(183,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+﻿  BD.cpp
+D:\С++\Проекты_С++\Tetst types\User.h(104,15): warning C4244: return: преобразование "int" в "float", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(129,37): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  MyForm.cpp
+D:\С++\Проекты_С++\Tetst types\User.h(104,15): warning C4244: return: преобразование "int" в "float", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(129,37): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(144,26): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(180,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(182,26): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(185,26): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(199,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  Создание кода...
+D:\С++\Проекты_С++\Tetst types\User.h(100,1): warning C4715: User::getspeed: значение возвращается не при всех путях выполнения
+D:\С++\Проекты_С++\Tetst types\User.h(105,1): warning C4715: User::getright: значение возвращается не при всех путях выполнения
+D:\С++\Проекты_С++\Tetst types\User.h(100,1): warning C4715: User::getspeed: значение возвращается не при всех путях выполнения
+D:\С++\Проекты_С++\Tetst types\User.h(105,1): warning C4715: User::getright: значение возвращается не при всех путях выполнения
   BD.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Tetst types.vcxproj -> D:\С++\Проекты_С++\Tetst types\x64\Debug\Tetst types.exe

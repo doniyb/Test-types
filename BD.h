@@ -1,4 +1,5 @@
 #pragma once
+#include "User.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -76,7 +77,90 @@ public:
 			if (conn != nullptr) {
 				conn->Close();
 			}
+		}
+	}
 
+	String^ Getid(String^ login)
+	{
+		try {
+			ConnectDB();
+
+			String^ cmdText = "SELECT id FROM dbo.akkaunt WHERE name = @loginVstavka";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+
+			cmd->Parameters->AddWithValue("@loginVstavka", login);
+
+			conn->Open();
+
+			SqlDataReader^ reader = cmd->ExecuteReader();
+			String^ id;
+			while (reader->Read())
+			{
+				id = reader["id"]->ToString();
+			}
+
+			return id;
+		}
+		finally {
+			if (conn != nullptr) {
+				conn->Close();
+			}
+		}
+	}
+
+	Mode ReadRecord(String^ login)
+	{
+		try {
+			ConnectDB();
+			conn->Open();
+			Mode record(200);
+
+			String^ cmdText = "select dbo.record_speed.speed200, dbo.record_speed.right200 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+			
+			String^ id = Getid(login);
+			cmd->Parameters->AddWithValue("@idVstavka", id);
+			
+			SqlDataReader^ reader = cmd->ExecuteReader();
+
+			while (reader->Read())
+			{
+				record.speed = Convert::ToInt16(reader["speed200"]->ToString());
+				record.right = Convert::ToDouble(reader["right200"]->ToString());
+			}
+
+			return record;
+		}
+		finally {
+			if (conn != nullptr) 
+			{
+				conn->Close();
+			}
+		}
+	}
+
+	void Change(User& user)
+	{
+		{
+			try {
+				ConnectDB();
+
+				String^ cmdText = "update dbo.record_speed set speed200 = @speedVstavka, right200 = @rightVstavka where akkaunt_id = @idVstavka";
+				SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+
+				conn->Open();
+
+				cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(200));
+				cmd->Parameters->AddWithValue("@rightVstavka", user.getright(200));
+				cmd->Parameters->AddWithValue("@idVstavka", Getid(gcnew String(user.getName().c_str())));
+
+				cmd->ExecuteNonQuery();
+			}
+			finally {
+				if (conn != nullptr) {
+					conn->Close();
+				}
+			}
 		}
 	}
 };

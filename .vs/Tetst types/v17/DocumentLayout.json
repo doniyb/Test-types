@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\BD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:BD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:MyForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,20 +23,13 @@
       "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\BD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:BD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0414\u0430\u043D\u044F\\AppData\\Local\\Temp\\ufvsk5sw..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0414\u0430\u043D\u044F\\AppData\\Local\\Temp\\ufvsk5sw..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26518181-C22C-4AFA-996E-F5DA14E8C8E0}|Tetst types.vcxproj|solutionrelative:Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0414\u0430\u043D\u044F\\AppData\\Local\\Temp\\ufvsk5sw..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,83 +51,74 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h",
-              "RelativeDocumentMoniker": "Login.h",
-              "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Login.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-30T12:02:24.392Z"
+              "DocumentIndex": 5,
+              "Title": "SQLQuery1.sql ",
+              "DocumentMoniker": "C:\\Users\\\u0414\u0430\u043D\u044F\\AppData\\Local\\Temp\\ufvsk5sw..sql",
+              "ToolTip": "SQLQuery1.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-09T11:43:29.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.h",
-              "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h",
-              "RelativeDocumentMoniker": "Login.h",
-              "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\Login.h",
-              "RelativeToolTip": "Login.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-30T12:03:08.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "BD.h",
               "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\BD.h",
               "RelativeDocumentMoniker": "BD.h",
               "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\BD.h",
               "RelativeToolTip": "BD.h",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEcAAAAFAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAAHUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-05T14:24:18.984Z"
+              "WhenOpened": "2024-08-05T14:24:18.984Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MyForm.h",
               "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.h",
               "RelativeDocumentMoniker": "MyForm.h",
               "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.h",
               "RelativeToolTip": "MyForm.h",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAAAAwBAAARAAAA",
+              "ViewState": "AQIAAAgBAAAAAAAAAAAAAA4BAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T09:46:43.074Z"
+              "WhenOpened": "2024-07-28T09:46:43.074Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MyForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.h",
               "RelativeDocumentMoniker": "MyForm.h",
               "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "MyForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-28T09:45:17.675Z"
+              "WhenOpened": "2024-07-28T09:45:17.675Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "User.h",
               "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\User.h",
               "RelativeDocumentMoniker": "User.h",
               "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\User.h",
               "RelativeToolTip": "User.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAADgAAAACAAAA",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAmwEcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-06T13:47:49.178Z"
+              "WhenOpened": "2024-08-06T13:47:49.178Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MyForm.cpp",
               "DocumentMoniker": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.cpp",
               "RelativeDocumentMoniker": "MyForm.cpp",
               "ToolTip": "D:\\\u0421\u002B\u002B\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B_\u0421\u002B\u002B\\Tetst types\\MyForm.cpp",
               "RelativeToolTip": "MyForm.cpp",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAQwKcAAAAcAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAmwCsAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-28T09:45:30.407Z",
               "EditorCaption": ""

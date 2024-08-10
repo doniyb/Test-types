@@ -22,7 +22,7 @@ Class Tetsttypes.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Methods:
     timerOn(): PrivateScope, Public, HideBySig
     timerOff(): PrivateScope, Public, HideBySig
-    test(Mode* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    test(): PrivateScope, Public, HideBySig
 Class Tetsttypes.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

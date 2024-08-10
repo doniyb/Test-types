@@ -11,6 +11,7 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+Mode mode;
 User user;
 
 int main(array<String^>^ args_main)
@@ -40,6 +41,8 @@ System::Void Tetsttypes::Login::buttEnter_Click(System::Object^ sender, System::
 	{
 		user.setName(context.marshal_as<std::string>(textBox_log->Text));
 		user.setPassword(context.marshal_as<std::string>(textBox_pasword->Text));
+		user.set(us.ReadRecord(gcnew String(user.getName().c_str())));
+
 		this->Close();
 	}
 }
@@ -49,7 +52,7 @@ System::Void Tetsttypes::Login::buttEnter_Click(System::Object^ sender, System::
 //Основное окно:
 //---------------
 int second = 0;
-const int max_seconds = 30;
+const int max_seconds = 60;
 std::vector <std::string> words{ "привет", "дом", "рука", "вид", "вопрос", "время", "он", "как",
 "его", "год", "голова", "дело", "день", "друг", "жизнь", "конец", "лицо", "место",
 "мир", "работа", "раз", "ребенок", "сила", "слово", "случай", "сторона", "страна", "человек",
@@ -68,20 +71,26 @@ int typech = -1; //количество набаранных слов
 int reightep = -1;
 //равно -1 т. к. в самом начале поле ввода и вывода пусты => равны
 
+
+void CheckResultTest();
+
 Tetsttypes::MyForm::MyForm(void)
 {
 	InitializeComponent();
 
 	profLog->Text = gcnew String(user.getName().c_str());
+	prof_speed200->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(200)).c_str()) + "зн/мин";
+	prof_right200->Text = "Точность: " + gcnew String(std::to_string(user.getright(200)).c_str()) + "%";
 }
 
+//включение таймера
 void Tetsttypes::MyForm::timerOn()
 {
 	second = 0;
 	timer->Interval = 1000;
 	timer->Enabled = true;
 }
-
+//выключение таймера
 void Tetsttypes::MyForm::timerOff()
 {
 	second = 0;
@@ -89,6 +98,7 @@ void Tetsttypes::MyForm::timerOff()
 	timer->Enabled = false;
 }
 
+//формат вывода
 std::string outtime(const int& seconds) {
 	int min = second / 60;
 	int sec = second % 60;
@@ -111,10 +121,13 @@ std::string outtime(const int& seconds) {
 	}
 	return res;
 }
+
+//окончание времени
 bool endtime(int& seconds, const int maxsec) {
 	double r = reightep;
 	double t = typech;
 	if (seconds == maxsec) {
+		CheckResultTest();
 		MessageBox::Show("Вы набрали\n" + reightep.ToString() + " правильных символов\n" + typech.ToString() + " всего\n" + float(r / t * 100).ToString() + "% точность");
 		second = 0;
 		typech = -1;
@@ -123,30 +136,33 @@ bool endtime(int& seconds, const int maxsec) {
 	}
 	return 0;
 }
-System::Void Tetsttypes::MyForm::timer_Tick(System::Object^ sender, System::EventArgs^ e)
-{
-	++second;
-	
-	label_timer->Text = gcnew String(outtime(second).c_str());
 
-	
-	endtime(second, max_seconds) ? Typed->Text = "Набранные: 0", timerOff() : 1;
+void CheckResultTest()
+{
+	double r = reightep;
+	double t = typech;
+	mode.right = float(r/ t)*100;
+	mode.speed = reightep/max_seconds*60;
+
+	user.set(mode);
+	mode.setsize(0);
+	mode.right = 0;
+	mode.speed = 0;
+	BD save;
+	save.Change(user);
 }
 
-void Tetsttypes::MyForm::test(Mode& par)
+//запуск теста
+void Tetsttypes::MyForm::test()
 {
-	Mode res(par.right);
 	timerOn();
 	tabControl1->SelectTab("tabPage2");
 }
 
-System::Void Tetsttypes::MyForm::buttStart200_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	Mode par(200);
-	test(par);
-}
 
 
+
+//проверка правильный ли символ введен
 bool proverkaOut(std::string& strinp, const std::string& strout) {
 	for (int i = 0; i < strinp.size(); ++i) 
 	{
@@ -158,6 +174,7 @@ bool proverkaOut(std::string& strinp, const std::string& strout) {
 	}
 	return true;
 }
+//проверка на совподение строк
 bool similar(const std::string& strinp, const std::string& strout) {
 	if (strinp == strout) {
 		srand(time(0));
@@ -168,8 +185,7 @@ bool similar(const std::string& strinp, const std::string& strout) {
 		reightep += strinp.size();
 	return strinp == strout;
 }
-
-
+//строка ввода
 System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
 
@@ -192,8 +208,22 @@ System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, 
 	Typed->Text = "Набранные: " + gcnew String(std::to_string(typech).c_str());
 }
 
+//кнопка начать тестирование на 200
+System::Void Tetsttypes::MyForm::buttStart200_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode.setsize(200);
+	test();
+}
+
+//таймер
+System::Void Tetsttypes::MyForm::timer_Tick(System::Object^ sender, System::EventArgs^ e)
+{
+	++second;
+
+	label_timer->Text = gcnew String(outtime(second).c_str());
 
 
-
+	endtime(second, max_seconds) ? Typed->Text = "Набранные: 0", timerOff() : 1;
+}
 
 

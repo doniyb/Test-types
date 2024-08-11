@@ -139,7 +139,7 @@ public:
 		}
 	}
 
-	void Change(User& user)
+	void Change(User& user, int size)
 	{
 		{
 			try {

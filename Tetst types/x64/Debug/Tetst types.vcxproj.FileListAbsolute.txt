@@ -3,3 +3,4 @@ D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.MyForm.
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetst types.vcxproj.GenerateResource.cache
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.Ресурсы.resources
 D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.Login.resources
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Debug\Tetsttypes.RegisterWind.resources

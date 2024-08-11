@@ -1,5 +1,6 @@
   Tetsttypes.Login.resources - Embedded, ContainedInManifestFile, 
   Tetsttypes.MyForm.resources - Embedded, ContainedInManifestFile, 
+  Tetsttypes.RegisterWind.resources - Embedded, ContainedInManifestFile, 
   Tetsttypes.Ресурсы.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Tetst types, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
@@ -19,10 +20,16 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class Tetsttypes.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 minuts : Public
   Methods:
     timerOn(): PrivateScope, Public, HideBySig
     timerOff(): PrivateScope, Public, HideBySig
     test(): PrivateScope, Public, HideBySig
+    Minuts(): PrivateScope, Public, HideBySig
 Class Tetsttypes.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tetsttypes.RegisterWind: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

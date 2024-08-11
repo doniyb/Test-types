@@ -97,11 +97,19 @@ public:
 	{
 		if (size == 200)
 			return m200.speed;
+		if (size == 500)
+			return m500.speed;
+		if (size == 1000)
+			return m1000.speed;
 	}
-	float getright(int size)
+	int getright(int size)
 	{
 		if (size == 200)
 			return m200.right;
+		if (size == 500)
+			return m500.right;
+		if (size == 1000)
+			return m1000.right;
 	}
 };
 

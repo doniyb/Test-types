@@ -17,8 +17,6 @@ namespace Tetsttypes {
 	public:
 		MyForm(void);
 
-	
-		
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -37,6 +35,9 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::Label^ label_timer;
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::TabPage^ tabPage1;
+
+
+
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Label^ profLog;
 	private: System::Windows::Forms::Button^ buttStart200;
@@ -48,10 +49,16 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::Label^ prof_right200;
 	private: System::Windows::Forms::ComboBox^ Timing;
 	private: System::Windows::Forms::Label^ labelTiming;
+	private: System::Windows::Forms::Label^ prof_right500;
 
+	private: System::Windows::Forms::Label^ prof_speed500;
+	private: System::Windows::Forms::Label^ prof_500;
+	private: System::Windows::Forms::Label^ prof_1000;
+	private: System::Windows::Forms::Label^ prof_right1000;
+	private: System::Windows::Forms::Label^ prof_speed1000;
+	private: System::Windows::Forms::Button^ buttStart1000;
 
-
-
+	private: System::Windows::Forms::Button^ buttStart500;
 
 
 
@@ -83,6 +90,15 @@ namespace Tetsttypes {
 			this->label_timer = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->buttStart1000 = (gcnew System::Windows::Forms::Button());
+			this->buttStart500 = (gcnew System::Windows::Forms::Button());
+			this->prof_right1000 = (gcnew System::Windows::Forms::Label());
+			this->prof_speed1000 = (gcnew System::Windows::Forms::Label());
+			this->prof_1000 = (gcnew System::Windows::Forms::Label());
+			this->prof_right500 = (gcnew System::Windows::Forms::Label());
+			this->prof_speed500 = (gcnew System::Windows::Forms::Label());
+			this->prof_500 = (gcnew System::Windows::Forms::Label());
+			this->labelTiming = (gcnew System::Windows::Forms::Label());
 			this->Timing = (gcnew System::Windows::Forms::ComboBox());
 			this->prof_right200 = (gcnew System::Windows::Forms::Label());
 			this->prof_speed200 = (gcnew System::Windows::Forms::Label());
@@ -91,7 +107,6 @@ namespace Tetsttypes {
 			this->profLog = (gcnew System::Windows::Forms::Label());
 			this->buttStart200 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->labelTiming = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -159,6 +174,14 @@ namespace Tetsttypes {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->buttStart1000);
+			this->tabPage1->Controls->Add(this->buttStart500);
+			this->tabPage1->Controls->Add(this->prof_right1000);
+			this->tabPage1->Controls->Add(this->prof_speed1000);
+			this->tabPage1->Controls->Add(this->prof_1000);
+			this->tabPage1->Controls->Add(this->prof_right500);
+			this->tabPage1->Controls->Add(this->prof_speed500);
+			this->tabPage1->Controls->Add(this->prof_500);
 			this->tabPage1->Controls->Add(this->labelTiming);
 			this->tabPage1->Controls->Add(this->Timing);
 			this->tabPage1->Controls->Add(this->prof_right200);
@@ -174,6 +197,105 @@ namespace Tetsttypes {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Профиль";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// buttStart1000
+			// 
+			this->buttStart1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttStart1000->Location = System::Drawing::Point(194, 363);
+			this->buttStart1000->Name = L"buttStart1000";
+			this->buttStart1000->Size = System::Drawing::Size(83, 39);
+			this->buttStart1000->TabIndex = 15;
+			this->buttStart1000->Text = L"Начать";
+			this->buttStart1000->UseVisualStyleBackColor = true;
+			this->buttStart1000->Click += gcnew System::EventHandler(this, &MyForm::buttStart1000_Click);
+			// 
+			// buttStart500
+			// 
+			this->buttStart500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttStart500->Location = System::Drawing::Point(194, 284);
+			this->buttStart500->Name = L"buttStart500";
+			this->buttStart500->Size = System::Drawing::Size(83, 39);
+			this->buttStart500->TabIndex = 14;
+			this->buttStart500->Text = L"Начать";
+			this->buttStart500->UseVisualStyleBackColor = true;
+			this->buttStart500->Click += gcnew System::EventHandler(this, &MyForm::buttStart500_Click);
+			// 
+			// prof_right1000
+			// 
+			this->prof_right1000->AutoSize = true;
+			this->prof_right1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_right1000->Location = System::Drawing::Point(46, 386);
+			this->prof_right1000->Name = L"prof_right1000";
+			this->prof_right1000->Size = System::Drawing::Size(89, 16);
+			this->prof_right1000->TabIndex = 13;
+			this->prof_right1000->Text = L"точность 0%";
+			// 
+			// prof_speed1000
+			// 
+			this->prof_speed1000->AutoSize = true;
+			this->prof_speed1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_speed1000->Location = System::Drawing::Point(46, 370);
+			this->prof_speed1000->Name = L"prof_speed1000";
+			this->prof_speed1000->Size = System::Drawing::Size(121, 16);
+			this->prof_speed1000->TabIndex = 12;
+			this->prof_speed1000->Text = L"скорость 0зн/мин";
+			// 
+			// prof_1000
+			// 
+			this->prof_1000->AutoSize = true;
+			this->prof_1000->Location = System::Drawing::Point(46, 347);
+			this->prof_1000->Name = L"prof_1000";
+			this->prof_1000->Size = System::Drawing::Size(35, 13);
+			this->prof_1000->TabIndex = 11;
+			this->prof_1000->Text = L"label2";
+			// 
+			// prof_right500
+			// 
+			this->prof_right500->AutoSize = true;
+			this->prof_right500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_right500->Location = System::Drawing::Point(46, 307);
+			this->prof_right500->Name = L"prof_right500";
+			this->prof_right500->Size = System::Drawing::Size(89, 16);
+			this->prof_right500->TabIndex = 10;
+			this->prof_right500->Text = L"точность 0%";
+			this->prof_right500->Click += gcnew System::EventHandler(this, &MyForm::prof_right500_Click);
+			// 
+			// prof_speed500
+			// 
+			this->prof_speed500->AutoSize = true;
+			this->prof_speed500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_speed500->Location = System::Drawing::Point(46, 291);
+			this->prof_speed500->Name = L"prof_speed500";
+			this->prof_speed500->Size = System::Drawing::Size(121, 16);
+			this->prof_speed500->TabIndex = 9;
+			this->prof_speed500->Text = L"скорость 0зн/мин";
+			this->prof_speed500->Click += gcnew System::EventHandler(this, &MyForm::prof_speed500_Click);
+			// 
+			// prof_500
+			// 
+			this->prof_500->AutoSize = true;
+			this->prof_500->Location = System::Drawing::Point(46, 268);
+			this->prof_500->Name = L"prof_500";
+			this->prof_500->Size = System::Drawing::Size(72, 13);
+			this->prof_500->TabIndex = 8;
+			this->prof_500->Text = L"топ 500 слов";
+			this->prof_500->Click += gcnew System::EventHandler(this, &MyForm::prof_500_Click);
+			// 
+			// labelTiming
+			// 
+			this->labelTiming->AutoSize = true;
+			this->labelTiming->Location = System::Drawing::Point(174, 142);
+			this->labelTiming->Name = L"labelTiming";
+			this->labelTiming->Size = System::Drawing::Size(138, 13);
+			this->labelTiming->TabIndex = 7;
+			this->labelTiming->Text = L"Выберете время таймера";
+			this->labelTiming->Click += gcnew System::EventHandler(this, &MyForm::label2_Click_1);
 			// 
 			// Timing
 			// 
@@ -260,20 +382,10 @@ namespace Tetsttypes {
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(376, 443);
+			this->tabPage2->Size = System::Drawing::Size(422, 472);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Тест";
 			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
-			// labelTiming
-			// 
-			this->labelTiming->AutoSize = true;
-			this->labelTiming->Location = System::Drawing::Point(174, 142);
-			this->labelTiming->Name = L"labelTiming";
-			this->labelTiming->Size = System::Drawing::Size(138, 13);
-			this->labelTiming->TabIndex = 7;
-			this->labelTiming->Text = L"Выберете время таймера";
-			this->labelTiming->Click += gcnew System::EventHandler(this, &MyForm::label2_Click_1);
 			// 
 			// MyForm
 			// 
@@ -293,7 +405,7 @@ namespace Tetsttypes {
 
 		}
 
-	public: 
+	public:
 		void timerOn();
 		void timerOff();
 		void test();
@@ -314,36 +426,43 @@ namespace Tetsttypes {
 				s += str[i];
 			}
 		}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		for (int i = 1; i < 11; ++i)
 		{
-			this->Timing->Items->Add(i.ToString()+" мин.");
+			this->Timing->Items->Add(i.ToString() + " мин.");
 		}
 	}
-	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e){}
+	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
 	private: System::Void textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void labelTyped(System::Object^ sender, System::EventArgs^ e){}
+	private: System::Void labelTyped(System::Object^ sender, System::EventArgs^ e) {}
 
 	private: System::Void label_timer_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void buttStart200_Click(System::Object^ sender, System::EventArgs^ e);
-
-	private: System::Void prof_speed200_Click(System::Object^ sender, System::EventArgs^ e){
+	private: System::Void prof_speed200_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void prof_200_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void Timing_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) 
-	{
-		
+	private: System::Void Timing_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void label2_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void label2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void prof_speed500_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void prof_right500_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void prof_500_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 
+	private: System::Void buttStart200_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttStart500_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttStart1000_Click(System::Object^ sender, System::EventArgs^ e);
+
+	};
 }
+
 

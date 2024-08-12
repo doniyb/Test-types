@@ -108,14 +108,19 @@ public:
 		}
 	}
 
-	Mode ReadRecord(String^ login)
+	Mode ReadRecord(String^ login, int size)
 	{
 		try {
 			ConnectDB();
 			conn->Open();
-			Mode record(200);
-
-			String^ cmdText = "select dbo.record_speed.speed200, dbo.record_speed.right200 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
+			Mode record(size);
+			String^ cmdText;
+			if (size == 200)
+				cmdText = "select dbo.record_speed.speed200, dbo.record_speed.right200 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
+			if (size == 500)
+				cmdText = "select dbo.record_speed.speed500, dbo.record_speed.right500 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
+			if (size == 1000)
+				cmdText = "select dbo.record_speed.speed1000, dbo.record_speed.right1000 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 			
 			String^ id = Getid(login);
@@ -125,8 +130,21 @@ public:
 
 			while (reader->Read())
 			{
-				record.speed = Convert::ToInt16(reader["speed200"]->ToString());
-				record.right = Convert::ToDouble(reader["right200"]->ToString());
+				if (size == 200 && reader["speed200"]->ToString()!="")
+				{
+					record.speed = Convert::ToInt16(reader["speed200"]->ToString());
+					record.right = Convert::ToDouble(reader["right200"]->ToString());
+				}
+				if (size == 500 && reader["speed500"]->ToString() != "")
+				{
+					record.speed = Convert::ToInt16(reader["speed500"]->ToString());
+					record.right = Convert::ToDouble(reader["right500"]->ToString());
+				}
+				if (size == 1000 && reader["speed1000"]->ToString() != "")
+				{
+					record.speed = Convert::ToInt16(reader["speed1000"]->ToString());
+					record.right = Convert::ToDouble(reader["right1000"]->ToString());
+				}
 			}
 
 			return record;
@@ -144,8 +162,14 @@ public:
 		{
 			try {
 				ConnectDB();
+				String^ cmdText;
+				if(size==200)
+					cmdText = "update dbo.record_speed set speed200 = @speedVstavka, right200 = @rightVstavka where akkaunt_id = @idVstavka";
+				if (size == 500)
+					cmdText = "update dbo.record_speed set speed500 = @speedVstavka, right500 = @rightVstavka where akkaunt_id = @idVstavka";
+				if (size == 1000)
+					cmdText = "update dbo.record_speed set speed1000 = @speedVstavka, right1000 = @rightVstavka where akkaunt_id = @idVstavka";
 
-				String^ cmdText = "update dbo.record_speed set speed200 = @speedVstavka, right200 = @rightVstavka where akkaunt_id = @idVstavka";
 				SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 
 				conn->Open();

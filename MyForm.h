@@ -114,23 +114,27 @@ namespace Tetsttypes {
 			// 
 			// textInput
 			// 
-			this->textInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textInput->Location = System::Drawing::Point(80, 173);
+			this->textInput->Location = System::Drawing::Point(12, 173);
+			this->textInput->MaxLength = 1000000;
 			this->textInput->Name = L"textInput";
-			this->textInput->Size = System::Drawing::Size(243, 35);
+			this->textInput->Size = System::Drawing::Size(404, 38);
 			this->textInput->TabIndex = 0;
 			this->textInput->TextChanged += gcnew System::EventHandler(this, &MyForm::textBoxInp_TextChanged);
 			// 
 			// textOutput
 			// 
-			this->textOutput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textOutput->BackColor = System::Drawing::SystemColors::Control;
+			this->textOutput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textOutput->Location = System::Drawing::Point(80, 112);
+			this->textOutput->Location = System::Drawing::Point(12, 112);
+			this->textOutput->MaxLength = 1000000;
 			this->textOutput->Name = L"textOutput";
 			this->textOutput->ReadOnly = true;
-			this->textOutput->Size = System::Drawing::Size(243, 35);
-			this->textOutput->TabIndex = 2;
+			this->textOutput->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->textOutput->Size = System::Drawing::Size(404, 38);
+			this->textOutput->TabIndex = 0;
 			this->textOutput->TextChanged += gcnew System::EventHandler(this, &MyForm::textBoxOut_TextChanged);
 			// 
 			// Typed
@@ -138,7 +142,7 @@ namespace Tetsttypes {
 			this->Typed->AutoSize = true;
 			this->Typed->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Typed->Location = System::Drawing::Point(173, 240);
+			this->Typed->Location = System::Drawing::Point(7, 263);
 			this->Typed->Name = L"Typed";
 			this->Typed->Size = System::Drawing::Size(150, 25);
 			this->Typed->TabIndex = 3;
@@ -249,9 +253,9 @@ namespace Tetsttypes {
 			this->prof_1000->AutoSize = true;
 			this->prof_1000->Location = System::Drawing::Point(46, 347);
 			this->prof_1000->Name = L"prof_1000";
-			this->prof_1000->Size = System::Drawing::Size(35, 13);
+			this->prof_1000->Size = System::Drawing::Size(78, 13);
 			this->prof_1000->TabIndex = 11;
-			this->prof_1000->Text = L"label2";
+			this->prof_1000->Text = L"топ 1000 слов";
 			// 
 			// prof_right500
 			// 
@@ -413,7 +417,7 @@ namespace Tetsttypes {
 		void Minuts()
 		{
 			msclr::interop::marshal_context context;
-			std::string str = context.marshal_as<std::string>(this->Timing->SelectedItem->ToString());;
+			std::string str = context.marshal_as<std::string>(this->Timing->SelectedItem->ToString());
 
 			std::string s;
 			for (int i = 0; i < str.size(); ++i)
@@ -426,6 +430,7 @@ namespace Tetsttypes {
 				s += str[i];
 			}
 		}
+		void ThreeStr(std::string& strinp, std::string& strout);
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		for (int i = 1; i < 11; ++i)

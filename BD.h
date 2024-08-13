@@ -31,19 +31,39 @@ public:
 		conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));
 	}
 
-	void Insert(String^ login, String^ password)
+	void InsertAk(String^ login, String^ password)
 	{
 		try {
 			ConnectDB();
-
+			conn->Open();
 			String^ cmdText = "INSERT INTO dbo.akkaunt(name, pasword) VALUES(@loginVstavka, @passwordVstavka)";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 
-
 			cmd->Parameters->AddWithValue("@loginVstavka", login);
 			cmd->Parameters->AddWithValue("@passwordVstavka", password);
+			
+			cmd->ExecuteNonQuery();
+		}
+		finally {
+			if (conn != nullptr) {
+				conn->Close();
+			}
+		}
+	}
 
+	void InsertRec(String^ login)
+	{
+		try {
+			ConnectDB();
 			conn->Open();
+			String^ cmdText = "INSERT INTO dbo.record_speed(akkaunt_id, speed200, right200, speed500, right500, speed1000, right1000) VALUES(@idVstavka, 0, 0, 0, 0, 0, 0)";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+
+			String^ id = Getid(login);
+			cmd->Parameters->AddWithValue("@loginVstavka", login);
+			cmd->Parameters->AddWithValue("@idVstavka", id);
+
+
 			cmd->ExecuteNonQuery();
 		}
 		finally {
@@ -173,9 +193,21 @@ public:
 				SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 
 				conn->Open();
-
-				cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(200));
-				cmd->Parameters->AddWithValue("@rightVstavka", user.getright(200));
+				if (size == 200)
+				{
+					cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(200));
+					cmd->Parameters->AddWithValue("@rightVstavka", user.getright(200));
+				}
+				if (size == 500)
+				{
+					cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(500));
+					cmd->Parameters->AddWithValue("@rightVstavka", user.getright(500));
+				}
+				if (size == 1000)
+				{
+					cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(1000));
+					cmd->Parameters->AddWithValue("@rightVstavka", user.getright(1000));
+				}
 				cmd->Parameters->AddWithValue("@idVstavka", Getid(gcnew String(user.getName().c_str())));
 
 				cmd->ExecuteNonQuery();

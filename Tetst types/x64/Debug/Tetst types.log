@@ -1,14 +1,14 @@
 ﻿  MyForm.cpp
 D:\С++\Проекты_С++\Tetst types\VectorWords.h(15,29): warning C4018: <: несоответствие типов со знаком и без знака
-D:\С++\Проекты_С++\Tetst types\VectorWords.h(31,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\BD.h(160,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\BD.h(165,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\BD.h(170,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(195,28): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(196,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(320,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(341,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(342,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\VectorWords.h(32,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(210,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(215,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(220,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(204,28): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(205,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(334,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(355,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(356,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
 D:\С++\Проекты_С++\Tetst types\User.h(104,1): warning C4715: User::getspeed: значение возвращается не при всех путях выполнения
 D:\С++\Проекты_С++\Tetst types\User.h(113,1): warning C4715: User::getright: значение возвращается не при всех путях выполнения
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка

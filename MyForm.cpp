@@ -98,7 +98,9 @@ System::Void Tetsttypes::RegisterWind::buttRegReg_Click(System::Object^ sender, 
 	BD us;
 	msclr::interop::marshal_context context;
 
-	if (RegLog->Text != "" && RegPassw->Text != "")
+	if (RegLog->Text != "" && RegPassw->Text != "" && !us.CheckRegist(RegLog->Text, RegPassw->Text)
+		&& count((context.marshal_as<std::string>(RegLog->Text)).begin(), (context.marshal_as<std::string>(RegLog->Text)).end(), ' ') == 0
+		&& count((context.marshal_as<std::string>(RegPassw->Text)).begin(), (context.marshal_as<std::string>(RegPassw->Text)).end(), ' ') == 0)
 	{
 		us.InsertAk(RegLog->Text, RegPassw->Text);
 		us.InsertRec(RegLog->Text);
@@ -106,6 +108,11 @@ System::Void Tetsttypes::RegisterWind::buttRegReg_Click(System::Object^ sender, 
 		openlogin = true;
 
 		this->Close();
+	}
+	else
+	{
+		ErrorLogin->Text = "Поменяйте пароль или имя пользователя";
+		ErrorPassw->Text = "Поменяйте пароль или имя пользователя";
 	}
 }
 
@@ -130,6 +137,8 @@ void FindProbel(std::string& str);
 Tetsttypes::MyForm::MyForm(void)
 {
 	InitializeComponent();
+
+	Timing->SelectedItem = "3 мин.";
 
 	OutProf();
 }
@@ -225,11 +234,16 @@ void Tetsttypes::MyForm::timerOff()
 System::Void Tetsttypes::MyForm::timer_Tick(System::Object^ sender, System::EventArgs^ e)
 {
 	++second;
-
 	label_timer->Text = gcnew String(outtime(second).c_str());
 
-
-	endtime(second, max_seconds) ? label_timer->Text = "Таймер 00 : 00", Typed->Text = "Набранные: 0", timerOff() : 1;
+	if (endtime(second, max_seconds))
+	{
+		label_timer->Text = "Таймер 00 : 00";
+		Typed->Text = "Набранные: 0";
+		timerOff();
+		textInput->Text = "";
+		textOutput->Text = "";
+	}
 
 	OutProf();
 }
@@ -348,6 +362,7 @@ System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, 
 	}
 	
 	ThreeStr(strinp, strout);
+
 	
 	Typed->Text = "Набранные: " + gcnew String(std::to_string(typech).c_str());
 }

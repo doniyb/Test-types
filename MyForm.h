@@ -62,6 +62,7 @@ namespace Tetsttypes {
 
 
 
+
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -416,12 +417,15 @@ namespace Tetsttypes {
 		void test();
 
 		int minuts;
+
 		//выбор времени
 		void Minuts()
 		{
 			msclr::interop::marshal_context context;
-			std::string str = context.marshal_as<std::string>(this->Timing->SelectedItem->ToString());
-
+			std::string str;
+		
+			str = context.marshal_as<std::string>(Timing->SelectedItem->ToString());
+				
 			std::string s;
 			for (int i = 0; i < str.size(); ++i)
 			{
@@ -445,6 +449,7 @@ namespace Tetsttypes {
 		{
 			this->Timing->Items->Add(i.ToString() + " мин.");
 		}
+		this->Timing->SelectedIndex = 2;
 	}
 	private: System::Void textBoxOut_TextChanged(System::Object^ sender, System::EventArgs^ e) {}
 	private: System::Void textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e);

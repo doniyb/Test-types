@@ -102,6 +102,56 @@ public:
 		}
 	}
 
+	bool CheckLogin(String^ login)
+	{
+		try {
+			ConnectDB();
+			conn->Open();
+
+			String^ cmdText = "SELECT name FROM dbo.akkaunt WHERE name = @loginVstavka";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+
+			cmd->Parameters->AddWithValue("@loginVstavka", login);
+
+			SqlDataReader^ reader = cmd->ExecuteReader();
+
+
+			return reader->HasRows;
+		}
+		finally {
+			if (conn != nullptr) {
+				conn->Close();
+			}
+		}
+	}
+
+	bool CheckPassword(String^ password)
+	{
+		try {
+			ConnectDB();
+			conn->Open();
+
+			String^ cmdText = "SELECT pasword FROM dbo.akkaunt WHERE pasword = @passwordVstavka";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+
+			cmd->Parameters->AddWithValue("@passwordVstavka", password);
+
+			SqlDataReader^ reader = cmd->ExecuteReader();
+
+			return reader->HasRows;
+		}
+		finally {
+			if (conn != nullptr) {
+				conn->Close();
+			}
+		}
+	}
+
+	bool CheckRegist(String^ login, String^ password)
+	{
+		return CheckLogin(login) || CheckPassword(password);
+	}
+
 	//получение id
 	String^ Getid(String^ login)
 	{

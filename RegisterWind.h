@@ -31,6 +31,11 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::Label^ labRegLog;
 	private: System::Windows::Forms::Label^ labRegPassw;
 	private: System::Windows::Forms::Button^ buttRegReg;
+	private: System::Windows::Forms::Label^ ErrorLogin;
+	private: System::Windows::Forms::Label^ ErrorPassw;
+
+
+
 
 	protected:
 
@@ -55,6 +60,8 @@ namespace Tetsttypes {
 			this->labRegLog = (gcnew System::Windows::Forms::Label());
 			this->labRegPassw = (gcnew System::Windows::Forms::Label());
 			this->buttRegReg = (gcnew System::Windows::Forms::Button());
+			this->ErrorLogin = (gcnew System::Windows::Forms::Label());
+			this->ErrorPassw = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// RegLog
@@ -91,7 +98,7 @@ namespace Tetsttypes {
 			// 
 			// buttRegReg
 			// 
-			this->buttRegReg->Location = System::Drawing::Point(60, 167);
+			this->buttRegReg->Location = System::Drawing::Point(60, 204);
 			this->buttRegReg->Name = L"buttRegReg";
 			this->buttRegReg->Size = System::Drawing::Size(171, 24);
 			this->buttRegReg->TabIndex = 4;
@@ -99,11 +106,31 @@ namespace Tetsttypes {
 			this->buttRegReg->UseVisualStyleBackColor = true;
 			this->buttRegReg->Click += gcnew System::EventHandler(this, &RegisterWind::buttRegReg_Click);
 			// 
+			// ErrorLogin
+			// 
+			this->ErrorLogin->AutoSize = true;
+			this->ErrorLogin->Location = System::Drawing::Point(57, 92);
+			this->ErrorLogin->Name = L"ErrorLogin";
+			this->ErrorLogin->Size = System::Drawing::Size(0, 16);
+			this->ErrorLogin->TabIndex = 5;
+			this->ErrorLogin->UseCompatibleTextRendering = true;
+			this->ErrorLogin->Click += gcnew System::EventHandler(this, &RegisterWind::label1_Click);
+			// 
+			// ErrorPassw
+			// 
+			this->ErrorPassw->AutoSize = true;
+			this->ErrorPassw->Location = System::Drawing::Point(57, 164);
+			this->ErrorPassw->Name = L"ErrorPassw";
+			this->ErrorPassw->Size = System::Drawing::Size(0, 13);
+			this->ErrorPassw->TabIndex = 6;
+			// 
 			// RegisterWind
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->ErrorPassw);
+			this->Controls->Add(this->ErrorLogin);
 			this->Controls->Add(this->buttRegReg);
 			this->Controls->Add(this->labRegPassw);
 			this->Controls->Add(this->labRegLog);
@@ -118,5 +145,7 @@ namespace Tetsttypes {
 #pragma endregion
 	private: System::Void buttRegReg_Click(System::Object^ sender, System::EventArgs^ e);
 	
-	};
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

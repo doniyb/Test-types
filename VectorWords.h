@@ -28,6 +28,7 @@ void Fillwords()
 //начальные 3 слова
 void FullstrTest(int size)
 {
+    strTest = "";
     srand(time(0));
     strTest += words[rand() % size];
     strTest += ' ';

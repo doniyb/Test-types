@@ -3,14 +3,17 @@
 #include <ctime>
 #include <msclr\marshal_cppstd.h>
 
+//слова
 #include "VectorWords.h"
 
+//данные пользователя и БД
 #include "BD.h"
 #include "User.h"
+
+//окна
 #include "Login.h"
 #include "RegisterWind.h"
 #include "MyForm.h"
-
 
 
 using namespace System;
@@ -53,6 +56,7 @@ int main(array<String^>^ args_main)
 	return 0;
 }
 
+//окно входа
 Tetsttypes::Login::Login(void)
 {
 	InitializeComponent();
@@ -83,8 +87,7 @@ System::Void Tetsttypes::Login::Register_Click(System::Object^ sender, System::E
 }
 
 
-
-
+//регистрация
 Tetsttypes::RegisterWind::RegisterWind(void)
 {
 	InitializeComponent();
@@ -109,12 +112,11 @@ System::Void Tetsttypes::RegisterWind::buttRegReg_Click(System::Object^ sender, 
 
 
 //Основное окно:
-int second = 0;
-int max_seconds = 180;
+int second = 0;// нынешнее время
+int max_seconds = 180;// максимальное время в секундах
 int num_word = 0;//номер слова в списке
 int typech = 0; //количество набранных слов
-int reightep = 0;
-//равно -1 т. к. в самом начале поле ввода и вывода пусты => равны
+int reightep = 0; // правильные символы
 
 
 void CheckResultTest();
@@ -129,6 +131,11 @@ Tetsttypes::MyForm::MyForm(void)
 {
 	InitializeComponent();
 
+	OutProf();
+}
+//Вывод данных в профиле
+void Tetsttypes::MyForm::OutProf()
+{
 	profLog->Text = gcnew String(user.getName().c_str());
 
 	prof_speed200->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(200)).c_str()) + "зн/мин";
@@ -139,7 +146,38 @@ Tetsttypes::MyForm::MyForm(void)
 
 	prof_speed1000->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(1000)).c_str()) + "зн/мин";
 	prof_right1000->Text = "Точность: " + gcnew String(std::to_string(user.getright(1000)).c_str()) + "%";
+}
 
+
+//кнопка начать тестирование на 200
+System::Void Tetsttypes::MyForm::buttStart200_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode.setsize(200);
+	FullstrTest(mode.getsize());
+	textOutput->Text = gcnew String(strTest.c_str());;
+	Minuts();
+	max_seconds = minuts * 60;
+	test();
+}
+//кнопка начать тестирование на 500
+System::Void Tetsttypes::MyForm::buttStart500_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode.setsize(500);
+	FullstrTest(mode.getsize());
+	textOutput->Text = gcnew String(strTest.c_str());
+	Minuts();
+	max_seconds = minuts * 60;
+	test();
+}
+//кнопка начать тестирование на 1000
+System::Void Tetsttypes::MyForm::buttStart1000_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode.setsize(1000);
+	FullstrTest(mode.getsize());
+	textOutput->Text = gcnew String(strTest.c_str());
+	Minuts();
+	max_seconds = minuts * 60;
+	test();
 }
 
 
@@ -193,14 +231,7 @@ System::Void Tetsttypes::MyForm::timer_Tick(System::Object^ sender, System::Even
 
 	endtime(second, max_seconds) ? label_timer->Text = "Таймер 00 : 00", Typed->Text = "Набранные: 0", timerOff() : 1;
 
-	prof_speed200->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(200)).c_str()) + "зн/мин";
-	prof_right200->Text = "Точность: " + gcnew String(std::to_string(user.getright(200)).c_str()) + "%";
-
-	prof_speed500->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(500)).c_str()) + "зн/мин";
-	prof_right500->Text = "Точность: " + gcnew String(std::to_string(user.getright(500)).c_str()) + "%";
-
-	prof_speed1000->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(1000)).c_str()) + "зн/мин";
-	prof_right1000->Text = "Точность: " + gcnew String(std::to_string(user.getright(1000)).c_str()) + "%";
+	OutProf();
 }
 //формат вывода
 std::string outtime(const int& seconds) {
@@ -238,7 +269,7 @@ bool endtime(int& seconds, const int maxsec) {
 	double t = typech;
 	if (seconds == maxsec) {
 		CheckResultTest();
-		MessageBox::Show("Вы набрали\n" + reightep.ToString() + " правильных символов\n" + typech.ToString() + " всего\n" + float(r / t * 100).ToString() + "% точность");
+		MessageBox::Show("Вы набрали\n" + reightep.ToString() + " правильных символов\n" + typech.ToString() + " всего\n" + int(r / t * 100).ToString() + "% точность\n" + float(reightep / (max_seconds / 60)) + "зн./мин. скорость");
 		second = 0;
 		typech = -1;
 		reightep = 0;
@@ -271,7 +302,7 @@ void FindProbel(std::string& str)
 {
 	str.erase(str.begin(), str.begin() + str.find(' ') + 1);
 }
-
+//3 слова в выводе
 void Tetsttypes::MyForm::ThreeStr(std::string& strinp, std::string& strout)
 {
 	if (similar(strinp, strout)) {
@@ -291,7 +322,6 @@ void Tetsttypes::MyForm::ThreeStr(std::string& strinp, std::string& strout)
 		textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());
 	}
 }
-
 //строка ввода
 System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, System::EventArgs^ e)
 {
@@ -324,35 +354,6 @@ System::Void Tetsttypes::MyForm::textBoxInp_TextChanged(System::Object^ sender, 
 
 
 
-//кнопка начать тестирование на 200
-System::Void Tetsttypes::MyForm::buttStart200_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	mode.setsize(200);
-	FullstrTest(mode.getsize());
-	textOutput->Text = gcnew String(strTest.c_str());;
-	Minuts();
-	max_seconds = minuts*60;
-	test();
-}
-//кнопка начать тестирование на 500
-System::Void Tetsttypes::MyForm::buttStart500_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	mode.setsize(500);
-	FullstrTest(mode.getsize());
-	textOutput->Text = gcnew String(strTest.c_str());
-	Minuts();
-	max_seconds = minuts * 60;
-	test();
-}
-//кнопка начать тестирование на 1000
-System::Void Tetsttypes::MyForm::buttStart1000_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	mode.setsize(1000);
-	FullstrTest(mode.getsize());
-	textOutput->Text = gcnew String(strTest.c_str());
-	Minuts();
-	max_seconds = minuts * 60;
-	test();
-}
+
 
 

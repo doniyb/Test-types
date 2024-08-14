@@ -412,8 +412,11 @@ namespace Tetsttypes {
 	public:
 		void timerOn();
 		void timerOff();
+
 		void test();
+
 		int minuts;
+		//выбор времени
 		void Minuts()
 		{
 			msclr::interop::marshal_context context;
@@ -430,7 +433,12 @@ namespace Tetsttypes {
 				s += str[i];
 			}
 		}
+
+		//3 слова в выводе
 		void ThreeStr(std::string& strinp, std::string& strout);
+
+		void OutProf();
+
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		for (int i = 1; i < 11; ++i)

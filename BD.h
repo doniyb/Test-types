@@ -31,6 +31,7 @@ public:
 		conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));
 	}
 
+	// вставка логина и пароля в БД
 	void InsertAk(String^ login, String^ password)
 	{
 		try {
@@ -51,6 +52,7 @@ public:
 		}
 	}
 
+	//вставка рекордов в БД (0)
 	void InsertRec(String^ login)
 	{
 		try {
@@ -73,7 +75,7 @@ public:
 		}
 	}
 
-	//проверка логина
+	//проверка логина и пароля
 	bool Check_login_and_password(String^ login, String^ password)
 	{
 		try {
@@ -100,6 +102,7 @@ public:
 		}
 	}
 
+	//получение id
 	String^ Getid(String^ login)
 	{
 		try {
@@ -128,6 +131,7 @@ public:
 		}
 	}
 
+	//чтение рекордов из БД
 	Mode ReadRecord(String^ login, int size)
 	{
 		try {
@@ -177,6 +181,7 @@ public:
 		}
 	}
 
+	//сохранение рекордов
 	void Change(User& user, int size)
 	{
 		{

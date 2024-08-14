@@ -25,6 +25,7 @@ void Fillwords()
     }
 }
 
+//начальные 3 слова
 void FullstrTest(int size)
 {
     srand(time(0));

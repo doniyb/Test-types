@@ -34,3 +34,4 @@ Class Tetsttypes.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     test(): PrivateScope, Public, HideBySig
     Minuts(): PrivateScope, Public, HideBySig
     ThreeStr(basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced, basic_string<char\,std::char_traits<char>\,std::allocator<char> >* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    OutProf(): PrivateScope, Public, HideBySig

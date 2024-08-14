@@ -9,9 +9,7 @@ namespace Tetsttypes {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Сводка для RegisterWind
-	/// </summary>
+
 	public ref class RegisterWind : public System::Windows::Forms::Form
 	{
 	public:
@@ -119,5 +117,6 @@ namespace Tetsttypes {
 		}
 #pragma endregion
 	private: System::Void buttRegReg_Click(System::Object^ sender, System::EventArgs^ e);
-};
+	
+	};
 }

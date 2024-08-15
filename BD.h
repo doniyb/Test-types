@@ -58,7 +58,7 @@ public:
 		try {
 			ConnectDB();
 			conn->Open();
-			String^ cmdText = "INSERT INTO dbo.record_speed(akkaunt_id, speed200, right200, speed500, right500, speed1000, right1000) VALUES(@idVstavka, 0, 0, 0, 0, 0, 0)";
+			String^ cmdText = "INSERT INTO dbo.record_speed(akkaunt_id, speed200, right200, speed500, right500, speed1000, right1000, hras_speed, hras_right) VALUES(@idVstavka, 0, 0, 0, 0, 0, 0, 0, 0)";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 
 			String^ id = Getid(login);
@@ -195,6 +195,8 @@ public:
 				cmdText = "select dbo.record_speed.speed500, dbo.record_speed.right500 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
 			if (size == 1000)
 				cmdText = "select dbo.record_speed.speed1000, dbo.record_speed.right1000 from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
+			if (size == 10)
+				cmdText = "select dbo.record_speed.hras_speed, dbo.record_speed.hras_right from dbo.akkaunt join dbo.record_speed on dbo.akkaunt.id = dbo.record_speed.akkaunt_id where dbo.akkaunt.id = @idVstavka";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 			
 			String^ id = Getid(login);
@@ -218,6 +220,11 @@ public:
 				{
 					record.speed = Convert::ToInt16(reader["speed1000"]->ToString());
 					record.right = Convert::ToDouble(reader["right1000"]->ToString());
+				}
+				if (size == 10 && reader["hras_speed"]->ToString() != "")
+				{
+					record.speed = Convert::ToInt16(reader["hras_speed"]->ToString());
+					record.right = Convert::ToDouble(reader["hras_right"]->ToString());
 				}
 			}
 
@@ -244,7 +251,9 @@ public:
 					cmdText = "update dbo.record_speed set speed500 = @speedVstavka, right500 = @rightVstavka where akkaunt_id = @idVstavka";
 				if (size == 1000)
 					cmdText = "update dbo.record_speed set speed1000 = @speedVstavka, right1000 = @rightVstavka where akkaunt_id = @idVstavka";
-
+				if (size == 10)
+					cmdText = "update dbo.record_speed set hras_speed = @speedVstavka, hras_right = @rightVstavka where akkaunt_id = @idVstavka";
+				
 				SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 
 				conn->Open();
@@ -262,6 +271,11 @@ public:
 				{
 					cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(1000));
 					cmd->Parameters->AddWithValue("@rightVstavka", user.getright(1000));
+				}
+				if (size == 10)
+				{
+					cmd->Parameters->AddWithValue("@speedVstavka", user.getspeed(10));
+					cmd->Parameters->AddWithValue("@rightVstavka", user.getright(10));
 				}
 				cmd->Parameters->AddWithValue("@idVstavka", Getid(gcnew String(user.getName().c_str())));
 

@@ -59,6 +59,13 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::Button^ buttStart1000;
 
 	private: System::Windows::Forms::Button^ buttStart500;
+	private: System::Windows::Forms::Label^ prof_frase;
+	private: System::Windows::Forms::Label^ prof_fras_speed;
+	private: System::Windows::Forms::Label^ prof_fras_right;
+	private: System::Windows::Forms::Button^ buttStartFras;
+
+
+
 
 
 
@@ -91,6 +98,10 @@ namespace Tetsttypes {
 			this->label_timer = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->buttStartFras = (gcnew System::Windows::Forms::Button());
+			this->prof_fras_right = (gcnew System::Windows::Forms::Label());
+			this->prof_fras_speed = (gcnew System::Windows::Forms::Label());
+			this->prof_frase = (gcnew System::Windows::Forms::Label());
 			this->buttStart1000 = (gcnew System::Windows::Forms::Button());
 			this->buttStart500 = (gcnew System::Windows::Forms::Button());
 			this->prof_right1000 = (gcnew System::Windows::Forms::Label());
@@ -179,6 +190,10 @@ namespace Tetsttypes {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->buttStartFras);
+			this->tabPage1->Controls->Add(this->prof_fras_right);
+			this->tabPage1->Controls->Add(this->prof_fras_speed);
+			this->tabPage1->Controls->Add(this->prof_frase);
 			this->tabPage1->Controls->Add(this->buttStart1000);
 			this->tabPage1->Controls->Add(this->buttStart500);
 			this->tabPage1->Controls->Add(this->prof_right1000);
@@ -203,11 +218,56 @@ namespace Tetsttypes {
 			this->tabPage1->Text = L"Профиль";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// buttStartFras
+			// 
+			this->buttStartFras->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttStartFras->Location = System::Drawing::Point(198, 394);
+			this->buttStartFras->Name = L"buttStartFras";
+			this->buttStartFras->Size = System::Drawing::Size(82, 39);
+			this->buttStartFras->TabIndex = 19;
+			this->buttStartFras->Text = L"Начать";
+			this->buttStartFras->UseVisualStyleBackColor = true;
+			this->buttStartFras->Click += gcnew System::EventHandler(this, &MyForm::buttStartFras_Click);
+			// 
+			// prof_fras_right
+			// 
+			this->prof_fras_right->AutoSize = true;
+			this->prof_fras_right->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_fras_right->Location = System::Drawing::Point(50, 417);
+			this->prof_fras_right->Name = L"prof_fras_right";
+			this->prof_fras_right->Size = System::Drawing::Size(89, 16);
+			this->prof_fras_right->TabIndex = 18;
+			this->prof_fras_right->Text = L"точность 0%";
+			// 
+			// prof_fras_speed
+			// 
+			this->prof_fras_speed->AutoSize = true;
+			this->prof_fras_speed->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_fras_speed->Location = System::Drawing::Point(50, 401);
+			this->prof_fras_speed->Name = L"prof_fras_speed";
+			this->prof_fras_speed->Size = System::Drawing::Size(121, 16);
+			this->prof_fras_speed->TabIndex = 17;
+			this->prof_fras_speed->Text = L"скорость 0зн/мин";
+			// 
+			// prof_frase
+			// 
+			this->prof_frase->AutoSize = true;
+			this->prof_frase->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->prof_frase->Location = System::Drawing::Point(50, 380);
+			this->prof_frase->Name = L"prof_frase";
+			this->prof_frase->Size = System::Drawing::Size(44, 13);
+			this->prof_frase->TabIndex = 16;
+			this->prof_frase->Text = L"Фразы";
+			// 
 			// buttStart1000
 			// 
 			this->buttStart1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->buttStart1000->Location = System::Drawing::Point(194, 363);
+			this->buttStart1000->Location = System::Drawing::Point(198, 317);
 			this->buttStart1000->Name = L"buttStart1000";
 			this->buttStart1000->Size = System::Drawing::Size(83, 39);
 			this->buttStart1000->TabIndex = 15;
@@ -219,7 +279,7 @@ namespace Tetsttypes {
 			// 
 			this->buttStart500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->buttStart500->Location = System::Drawing::Point(194, 284);
+			this->buttStart500->Location = System::Drawing::Point(198, 238);
 			this->buttStart500->Name = L"buttStart500";
 			this->buttStart500->Size = System::Drawing::Size(83, 39);
 			this->buttStart500->TabIndex = 14;
@@ -232,7 +292,7 @@ namespace Tetsttypes {
 			this->prof_right1000->AutoSize = true;
 			this->prof_right1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_right1000->Location = System::Drawing::Point(46, 386);
+			this->prof_right1000->Location = System::Drawing::Point(50, 340);
 			this->prof_right1000->Name = L"prof_right1000";
 			this->prof_right1000->Size = System::Drawing::Size(89, 16);
 			this->prof_right1000->TabIndex = 13;
@@ -243,7 +303,7 @@ namespace Tetsttypes {
 			this->prof_speed1000->AutoSize = true;
 			this->prof_speed1000->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_speed1000->Location = System::Drawing::Point(46, 370);
+			this->prof_speed1000->Location = System::Drawing::Point(50, 324);
 			this->prof_speed1000->Name = L"prof_speed1000";
 			this->prof_speed1000->Size = System::Drawing::Size(121, 16);
 			this->prof_speed1000->TabIndex = 12;
@@ -252,7 +312,7 @@ namespace Tetsttypes {
 			// prof_1000
 			// 
 			this->prof_1000->AutoSize = true;
-			this->prof_1000->Location = System::Drawing::Point(46, 347);
+			this->prof_1000->Location = System::Drawing::Point(50, 301);
 			this->prof_1000->Name = L"prof_1000";
 			this->prof_1000->Size = System::Drawing::Size(78, 13);
 			this->prof_1000->TabIndex = 11;
@@ -263,7 +323,7 @@ namespace Tetsttypes {
 			this->prof_right500->AutoSize = true;
 			this->prof_right500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_right500->Location = System::Drawing::Point(46, 307);
+			this->prof_right500->Location = System::Drawing::Point(50, 261);
 			this->prof_right500->Name = L"prof_right500";
 			this->prof_right500->Size = System::Drawing::Size(89, 16);
 			this->prof_right500->TabIndex = 10;
@@ -275,7 +335,7 @@ namespace Tetsttypes {
 			this->prof_speed500->AutoSize = true;
 			this->prof_speed500->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_speed500->Location = System::Drawing::Point(46, 291);
+			this->prof_speed500->Location = System::Drawing::Point(50, 245);
 			this->prof_speed500->Name = L"prof_speed500";
 			this->prof_speed500->Size = System::Drawing::Size(121, 16);
 			this->prof_speed500->TabIndex = 9;
@@ -285,7 +345,7 @@ namespace Tetsttypes {
 			// prof_500
 			// 
 			this->prof_500->AutoSize = true;
-			this->prof_500->Location = System::Drawing::Point(46, 268);
+			this->prof_500->Location = System::Drawing::Point(50, 222);
 			this->prof_500->Name = L"prof_500";
 			this->prof_500->Size = System::Drawing::Size(72, 13);
 			this->prof_500->TabIndex = 8;
@@ -295,7 +355,7 @@ namespace Tetsttypes {
 			// labelTiming
 			// 
 			this->labelTiming->AutoSize = true;
-			this->labelTiming->Location = System::Drawing::Point(174, 142);
+			this->labelTiming->Location = System::Drawing::Point(189, 85);
 			this->labelTiming->Name = L"labelTiming";
 			this->labelTiming->Size = System::Drawing::Size(138, 13);
 			this->labelTiming->TabIndex = 7;
@@ -306,7 +366,7 @@ namespace Tetsttypes {
 			// 
 			this->Timing->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Timing->FormattingEnabled = true;
-			this->Timing->Location = System::Drawing::Point(318, 134);
+			this->Timing->Location = System::Drawing::Point(333, 77);
 			this->Timing->Name = L"Timing";
 			this->Timing->Size = System::Drawing::Size(83, 21);
 			this->Timing->TabIndex = 6;
@@ -317,7 +377,7 @@ namespace Tetsttypes {
 			this->prof_right200->AutoSize = true;
 			this->prof_right200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_right200->Location = System::Drawing::Point(46, 228);
+			this->prof_right200->Location = System::Drawing::Point(50, 182);
 			this->prof_right200->Name = L"prof_right200";
 			this->prof_right200->Size = System::Drawing::Size(89, 16);
 			this->prof_right200->TabIndex = 5;
@@ -329,7 +389,7 @@ namespace Tetsttypes {
 			this->prof_speed200->AutoSize = true;
 			this->prof_speed200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->prof_speed200->Location = System::Drawing::Point(46, 212);
+			this->prof_speed200->Location = System::Drawing::Point(50, 166);
 			this->prof_speed200->Name = L"prof_speed200";
 			this->prof_speed200->Size = System::Drawing::Size(121, 16);
 			this->prof_speed200->TabIndex = 3;
@@ -339,7 +399,7 @@ namespace Tetsttypes {
 			// prof_200
 			// 
 			this->prof_200->AutoSize = true;
-			this->prof_200->Location = System::Drawing::Point(46, 189);
+			this->prof_200->Location = System::Drawing::Point(50, 143);
 			this->prof_200->Name = L"prof_200";
 			this->prof_200->Size = System::Drawing::Size(72, 13);
 			this->prof_200->TabIndex = 2;
@@ -370,7 +430,7 @@ namespace Tetsttypes {
 			// 
 			this->buttStart200->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->buttStart200->Location = System::Drawing::Point(194, 205);
+			this->buttStart200->Location = System::Drawing::Point(198, 159);
 			this->buttStart200->Name = L"buttStart200";
 			this->buttStart200->Size = System::Drawing::Size(83, 39);
 			this->buttStart200->TabIndex = 4;
@@ -480,7 +540,8 @@ namespace Tetsttypes {
 	private: System::Void buttStart500_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttStart1000_Click(System::Object^ sender, System::EventArgs^ e);
 
-	};
+	private: System::Void buttStartFras_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }
 
 

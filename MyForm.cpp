@@ -74,6 +74,7 @@ System::Void Tetsttypes::Login::buttEnter_Click(System::Object^ sender, System::
 		user.set(us.ReadRecord(gcnew String(user.getName().c_str()), 200));
 		user.set(us.ReadRecord(gcnew String(user.getName().c_str()), 500));
 		user.set(us.ReadRecord(gcnew String(user.getName().c_str()), 1000));
+		user.set(us.ReadRecord(gcnew String(user.getName().c_str()), 10));
 
 		openform = true;
 		this->Close();
@@ -155,6 +156,9 @@ void Tetsttypes::MyForm::OutProf()
 
 	prof_speed1000->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(1000)).c_str()) + "зн/мин";
 	prof_right1000->Text = "Точность: " + gcnew String(std::to_string(user.getright(1000)).c_str()) + "%";
+
+	prof_fras_speed->Text = "Скорость: " + gcnew String(std::to_string(user.getspeed(10)).c_str()) + "зн/мин";
+	prof_fras_right->Text = "Точность: " + gcnew String(std::to_string(user.getright(10)).c_str()) + "%";
 }
 
 
@@ -182,6 +186,16 @@ System::Void Tetsttypes::MyForm::buttStart500_Click(System::Object^ sender, Syst
 System::Void Tetsttypes::MyForm::buttStart1000_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	mode.setsize(1000);
+	FullstrTest(mode.getsize());
+	textOutput->Text = gcnew String(strTest.c_str());
+	Minuts();
+	max_seconds = minuts * 60;
+	test();
+}
+
+System::Void Tetsttypes::MyForm::buttStartFras_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode.setsize(10);
 	FullstrTest(mode.getsize());
 	textOutput->Text = gcnew String(strTest.c_str());
 	Minuts();
@@ -309,31 +323,43 @@ bool proverkaOut(std::string& strinp, const std::string& strout) {
 //проверка на совподение строк
 bool similar(const std::string& strinp, const std::string& strout) 
 {
-	return count(strinp.begin(), strinp.end(), ' ') == 2;
+	return strinp.size() > 14;
 }
 //удаление самого левого слова
 void FindProbel(std::string& str)
 {
-	str.erase(str.begin(), str.begin() + str.find(' ') + 1);
+	str.erase(str.begin());
 }
 //3 слова в выводе
 void Tetsttypes::MyForm::ThreeStr(std::string& strinp, std::string& strout)
 {
 	if (similar(strinp, strout)) {
 		FindProbel(strout);
-		strinp = "";
-		for (int i = 0; i < strout.size(); ++i)
-		{
-			strinp += strout[i];
-			if (strout[i] == ' ')
-				break;
-		}
+		FindProbel(strinp);
+		
 		textOutput->Text = gcnew String(strout.c_str());
 		textInput->Text = gcnew String(strinp.c_str());
 
-		srand(time(0));
-		textOutput->Text += " ";
-		textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());
+		if (strout.size() < 100)
+		{
+			srand(time(0));
+			if (mode.getsize() != suggestions.size())
+			{
+				textOutput->Text += " ";
+				textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());
+				textOutput->Text += " ";
+				textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());
+				textOutput->Text += " ";
+				textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());
+			}
+			else
+			{
+				textOutput->Text += " ";
+				textOutput->Text += gcnew String(suggestions[rand() % suggestions.size()].c_str());
+				textOutput->Text += " ";
+				textOutput->Text += gcnew String(suggestions[rand() % suggestions.size()].c_str());
+			}
+		}
 	}
 }
 //строка ввода

@@ -47,6 +47,8 @@ private:
 	Mode m500{ 500 };
 	Mode m1000{ 1000 };
 
+	Mode phras{ 10 };
+
 public:
 
 	User() {}
@@ -92,6 +94,13 @@ public:
 			if (this->m1000.right < mode.right)
 				this->m1000.right = mode.right;
 		}
+		if (mode.getsize() == 10)
+		{
+			if (this->phras.speed < mode.speed)
+				this->phras.speed = mode.speed;
+			if (this->phras.right < mode.right)
+				this->phras.right = mode.right;
+		}
 	}
 	int getspeed(int size)
 	{
@@ -101,6 +110,8 @@ public:
 			return m500.speed;
 		if (size == 1000)
 			return m1000.speed;
+		if (size == 10)
+			return phras.speed;
 	}
 	int getright(int size)
 	{
@@ -110,6 +121,8 @@ public:
 			return m500.right;
 		if (size == 1000)
 			return m1000.right;
+		if (size == 10)
+			return phras.right;
 	}
 };
 

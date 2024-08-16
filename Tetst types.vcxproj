@@ -84,6 +84,7 @@
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,6 +135,7 @@
     <ClInclude Include="RegisterWind.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="VectorWords.h" />
   </ItemGroup>
@@ -148,6 +150,12 @@
       <DependentUpon>RegisterWind.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ресурсы.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Tetst types.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\4212925_book_key_keyboard_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

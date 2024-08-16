@@ -343,7 +343,7 @@ void Tetsttypes::MyForm::ThreeStr(std::string& strinp, std::string& strout)
 		if (strout.size() < 100)
 		{
 			srand(time(0));
-			if (mode.getsize() != suggestions.size())
+			if (mode.getsize() != 10)
 			{
 				textOutput->Text += " ";
 				textOutput->Text += gcnew String(words[rand() % mode.getsize()].c_str());

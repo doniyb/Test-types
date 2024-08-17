@@ -1,0 +1,6 @@
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetst types.vcxproj.AssemblyReference.cache
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetsttypes.Login.resources
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetsttypes.MyForm.resources
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetsttypes.RegisterWind.resources
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetsttypes.Ресурсы.resources
+D:\С++\Проекты_С++\Tetst types\Tetst types\x64\Release\Tetst types.vcxproj.GenerateResource.cache

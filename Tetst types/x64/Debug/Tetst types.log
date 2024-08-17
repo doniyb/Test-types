@@ -7,11 +7,13 @@ D:\С++\Проекты_С++\Tetst types\BD.h(212,38): warning C4244: =: прео
 D:\С++\Проекты_С++\Tetst types\BD.h(217,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
 D:\С++\Проекты_С++\Tetst types\BD.h(222,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
 D:\С++\Проекты_С++\Tetst types\BD.h(227,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(218,28): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(219,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(345,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(381,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\С++\Проекты_С++\Tetst types\MyForm.cpp(382,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(219,28): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(220,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(346,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(382,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(383,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
 D:\С++\Проекты_С++\Tetst types\User.h(115,1): warning C4715: User::getspeed: значение возвращается не при всех путях выполнения
 D:\С++\Проекты_С++\Tetst types\User.h(126,1): warning C4715: User::getright: значение возвращается не при всех путях выполнения
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка

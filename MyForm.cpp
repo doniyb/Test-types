@@ -26,6 +26,7 @@ bool openlogin = false;
 Mode mode(1000);//режим
 User user;//пользователь
 
+[System::STAThreadAttribute()]
 int main(array<String^>^ args_main)
 {
 	Application::EnableVisualStyles();

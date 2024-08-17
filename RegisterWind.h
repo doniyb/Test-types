@@ -55,6 +55,7 @@ namespace Tetsttypes {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegisterWind::typeid));
 			this->RegLog = (gcnew System::Windows::Forms::TextBox());
 			this->RegPassw = (gcnew System::Windows::Forms::TextBox());
 			this->labRegLog = (gcnew System::Windows::Forms::Label());
@@ -66,44 +67,61 @@ namespace Tetsttypes {
 			// 
 			// RegLog
 			// 
-			this->RegLog->Location = System::Drawing::Point(60, 69);
+			this->RegLog->BackColor = System::Drawing::SystemColors::Info;
+			this->RegLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->RegLog->Location = System::Drawing::Point(42, 100);
 			this->RegLog->Name = L"RegLog";
-			this->RegLog->Size = System::Drawing::Size(171, 20);
+			this->RegLog->Size = System::Drawing::Size(200, 26);
 			this->RegLog->TabIndex = 0;
 			// 
 			// RegPassw
 			// 
-			this->RegPassw->Location = System::Drawing::Point(60, 141);
+			this->RegPassw->BackColor = System::Drawing::SystemColors::Info;
+			this->RegPassw->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->RegPassw->Location = System::Drawing::Point(42, 166);
 			this->RegPassw->Name = L"RegPassw";
-			this->RegPassw->Size = System::Drawing::Size(171, 20);
+			this->RegPassw->Size = System::Drawing::Size(200, 26);
 			this->RegPassw->TabIndex = 1;
 			// 
 			// labRegLog
 			// 
 			this->labRegLog->AutoSize = true;
-			this->labRegLog->Location = System::Drawing::Point(57, 53);
+			this->labRegLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labRegLog->ForeColor = System::Drawing::Color::Khaki;
+			this->labRegLog->Location = System::Drawing::Point(46, 77);
 			this->labRegLog->Name = L"labRegLog";
-			this->labRegLog->Size = System::Drawing::Size(101, 13);
+			this->labRegLog->Size = System::Drawing::Size(167, 20);
 			this->labRegLog->TabIndex = 2;
 			this->labRegLog->Text = L"им€ пользовател€";
+			this->labRegLog->Click += gcnew System::EventHandler(this, &RegisterWind::labRegLog_Click);
 			// 
 			// labRegPassw
 			// 
 			this->labRegPassw->AutoSize = true;
-			this->labRegPassw->Location = System::Drawing::Point(57, 125);
+			this->labRegPassw->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labRegPassw->ForeColor = System::Drawing::Color::Khaki;
+			this->labRegPassw->Location = System::Drawing::Point(46, 144);
 			this->labRegPassw->Name = L"labRegPassw";
-			this->labRegPassw->Size = System::Drawing::Size(43, 13);
+			this->labRegPassw->Size = System::Drawing::Size(70, 20);
 			this->labRegPassw->TabIndex = 3;
 			this->labRegPassw->Text = L"пароль";
 			// 
 			// buttRegReg
 			// 
-			this->buttRegReg->Location = System::Drawing::Point(60, 204);
+			this->buttRegReg->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->buttRegReg->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttRegReg->Location = System::Drawing::Point(42, 266);
 			this->buttRegReg->Name = L"buttRegReg";
-			this->buttRegReg->Size = System::Drawing::Size(171, 24);
+			this->buttRegReg->Size = System::Drawing::Size(200, 36);
 			this->buttRegReg->TabIndex = 4;
 			this->buttRegReg->Text = L"«арегестрироватьс€";
-			this->buttRegReg->UseVisualStyleBackColor = true;
+			this->buttRegReg->UseVisualStyleBackColor = false;
 			this->buttRegReg->Click += gcnew System::EventHandler(this, &RegisterWind::buttRegReg_Click);
 			// 
 			// ErrorLogin
@@ -128,7 +146,8 @@ namespace Tetsttypes {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->ClientSize = System::Drawing::Size(284, 377);
 			this->Controls->Add(this->ErrorPassw);
 			this->Controls->Add(this->ErrorLogin);
 			this->Controls->Add(this->buttRegReg);
@@ -136,7 +155,9 @@ namespace Tetsttypes {
 			this->Controls->Add(this->labRegLog);
 			this->Controls->Add(this->RegPassw);
 			this->Controls->Add(this->RegLog);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"RegisterWind";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"RegisterWind";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -147,5 +168,7 @@ namespace Tetsttypes {
 	
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void labRegLog_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

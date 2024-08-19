@@ -22,7 +22,7 @@ public:
 	void ConnectDB()
 	{
 		//Data Source=DESKTOP-5J3M7TI\SQLSERVERDONIYB;Initial Catalog=Type_test;Integrated Security=True;Trust Server Certificate=True
-
+		//Надо что-то менять
 		connStringBuilder = gcnew SqlConnectionStringBuilder();
 		connStringBuilder->DataSource = "DESKTOP-5J3M7TI\\SQLSERVERDONIYB";
 		connStringBuilder->InitialCatalog = "Type_test";

@@ -1,5 +1,7 @@
 #pragma once
 #include "User.h"
+#include <sql.h>
+#include <sqlext.h>
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -23,12 +25,37 @@ public:
 	{
 		//Data Source=DESKTOP-5J3M7TI\SQLSERVERDONIYB;Initial Catalog=Type_test;Integrated Security=True;Trust Server Certificate=True
 		//Надо что-то менять
-		connStringBuilder = gcnew SqlConnectionStringBuilder();
+		/*connStringBuilder = gcnew SqlConnectionStringBuilder();
 		connStringBuilder->DataSource = "DESKTOP-5J3M7TI\\SQLSERVERDONIYB";
 		connStringBuilder->InitialCatalog = "Type_test";
 		connStringBuilder->IntegratedSecurity = true;
 
-		conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));
+		conn = gcnew SqlConnection(Convert::ToString(connStringBuilder));*/
+
+		SQLHENV hEnv;
+		SQLHDBC hDbc;
+		SQLRETURN ret;
+
+		// Выделяем дескриптор окружения
+		ret = SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
+
+		// Устанавливаем версию ODBC
+		ret = SQLSetEnvAttr(hEnv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0);
+
+		// Выделяем дескриптор соединения
+		ret = SQLAllocHandle(SQL_HANDLE_DBC, hEnv, &hDbc);
+
+		// Строка подключения
+		const char* connectionString = "Driver={ODBC Driver 17 for SQL Server};Server=192.168.42.230,1433;Database=Имя_базы_данных;Uid=Ваш_пользователь;Pwd=Ваш_пароль;";
+
+		// Подключаемся к базе данных
+		ret = SQLDriverConnect(hDbc, NULL, (SQLCHAR*)connectionString, SQL_NTS,
+			NULL, 0, NULL, SQL_DRIVER_COMPLETE);
+
+		// Освобождаем ресурсы
+		SQLDisconnect(hDbc);
+		SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
+		SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
 	}
 
 	// вставка логина и пароля в БД

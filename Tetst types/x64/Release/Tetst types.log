@@ -1,2 +1,18 @@
-﻿  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+﻿  MyForm.cpp
+D:\С++\Проекты_С++\Tetst types\VectorWords.h(120,29): warning C4018: <: несоответствие типов со знаком и без знака
+D:\С++\Проекты_С++\Tetst types\VectorWords.h(139,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\VectorWords.h(157,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\VectorWords.h(159,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(214,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(219,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(224,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\BD.h(229,38): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(219,28): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(220,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(346,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(382,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\MyForm.cpp(383,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\С++\Проекты_С++\Tetst types\User.h(115,1): warning C4715: User::getspeed: значение возвращается не при всех путях выполнения
+D:\С++\Проекты_С++\Tetst types\User.h(126,1): warning C4715: User::getright: значение возвращается не при всех путях выполнения
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Tetst types.vcxproj -> D:\С++\Проекты_С++\Tetst types\x64\Release\Tetst types.exe

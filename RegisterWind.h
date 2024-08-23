@@ -35,8 +35,6 @@ namespace Tetsttypes {
 	private: System::Windows::Forms::Label^ ErrorPassw;
 
 
-
-
 	protected:
 
 
@@ -127,20 +125,24 @@ namespace Tetsttypes {
 			// ErrorLogin
 			// 
 			this->ErrorLogin->AutoSize = true;
-			this->ErrorLogin->Location = System::Drawing::Point(57, 92);
+			this->ErrorLogin->ForeColor = System::Drawing::Color::Red;
+			this->ErrorLogin->Location = System::Drawing::Point(42, 127);
 			this->ErrorLogin->Name = L"ErrorLogin";
-			this->ErrorLogin->Size = System::Drawing::Size(0, 16);
+			this->ErrorLogin->Size = System::Drawing::Size(23, 17);
 			this->ErrorLogin->TabIndex = 5;
+			this->ErrorLogin->Text = L"";
 			this->ErrorLogin->UseCompatibleTextRendering = true;
 			this->ErrorLogin->Click += gcnew System::EventHandler(this, &RegisterWind::label1_Click);
 			// 
 			// ErrorPassw
 			// 
 			this->ErrorPassw->AutoSize = true;
-			this->ErrorPassw->Location = System::Drawing::Point(57, 164);
+			this->ErrorPassw->ForeColor = System::Drawing::Color::Red;
+			this->ErrorPassw->Location = System::Drawing::Point(39, 195);
 			this->ErrorPassw->Name = L"ErrorPassw";
-			this->ErrorPassw->Size = System::Drawing::Size(0, 13);
+			this->ErrorPassw->Size = System::Drawing::Size(25, 13);
 			this->ErrorPassw->TabIndex = 6;
+			this->ErrorPassw->Text = L"";
 			// 
 			// RegisterWind
 			// 

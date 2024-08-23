@@ -113,8 +113,8 @@ System::Void Tetsttypes::RegisterWind::buttRegReg_Click(System::Object^ sender, 
 	}
 	else
 	{
-		ErrorLogin->Text = "Поменяйте пароль или имя пользователя";
-		ErrorPassw->Text = "Поменяйте пароль или имя пользователя";
+		ErrorLogin->Text = "Поменяйте имя пользователя";
+		ErrorPassw->Text = "Поменяйте пароль";
 	}
 }
 
